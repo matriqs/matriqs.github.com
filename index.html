@@ -1,22 +1,53 @@
-<!DOCTYPE html>
 <html>
 <body>
+<style>
+body { font-family: 'Open Sans', sans-serif; 
+background-color:#1F2739; }
+#input { width:59.7%; margin-bottom:10px; 
+background-color:#323180; 
+padding:10px; outline: none;}
+table { display: block;  display: flex; 
+flex-direction: column-reverse;
+border-collapse: collapse; width:60%; color:#A7A1AE; }
+tbody:nth-child(odd) { background-color:#323C50; }
+tbody:nth-child(even) { background-color: #2C3460; } 
+td:nth-child(3){ color: #FB667A; width:5%; }
+td:nth-child(2){ color:#bfab22cc; width:5%; }
+td:nth-child(1){ color: #c4c4c4; width:90%; }
+td { border:2px solid #1F2739; padding:10px; cursor:pointer; }
+</style>
 
-<h1>JavaScript Strings</h1>
-<h2>The charCodeAt() Method</h2>
-
-<p>charCodeAt() returns the Unicode of the character at a specified position in a string.</p>
-
-<p>Get the Unicode of the first character:</p>
-
-<p id="demo"></p>
+<center> <input id="input" placeholder="BIRSEYLER YAZ" autocomplete="off" />
+<table id="demo"> </table> </center>
 
 <script>
-let text = "HELLO WORLD";
-let code = text.charCodeAt(0);
+save = () => { const save = localStorage.setItem("text", demo.innerHTML) };
 
-document.getElementById("demo").innerHTML = code;
+result = () => { demo.innerHTML = localStorage.getItem("text") };
+
+input.onkeyup = () => {
+if (event.keyCode == 13) {
+demo.innerHTML +=  `<td> ${input.value} </td> <td>✔️</td> <td>🗑️</td>`;
+input.value = null; 
+demo.rows.length > 7
+? document.querySelector("#demo > tbody:nth-child(1)").outerHTML = ""
+: '';
+save();}
+}
+
+onclick = () => {
+if (event.target.innerText === "🗑️"){
+event.path[2].outerHTML = null; 
+}
+if (event.target.innerText === "✔️"){
+indez = event.path[1].cells[0].innerHTML.strike();
+event.path[2].innerHTML = `<td> ${indez} </td> <td>🆗</td> <td>🗑️</td>`;
+}
+save();
+}
+
+result();
+
 </script>
-
 </body>
 </html>
