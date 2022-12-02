@@ -1,39 +1,106 @@
 <html>
-<body>
 <style>
-body { 
-font-family: 'Open Sans', sans-serif; 
-background-color:#1F2739; 
+  body {background-color: grey;}
+button:active {
+  transform: translateY(20%);}
+#butns { 
+  border-radius:10px 10px 0px 0px ;
+  background-color: #050041;
+  min-width:350px; 
+  width:50%;
+  height: 15vh;
+  padding:10px 0px 0px 0px;}
+#butns > button {
+  cursor:pointer;
+  border:none;
+  margin: 5px;
+  width: 28%;
+  height: 10vh;
+  font-size:20px;
+  color:white;
+  border-radius:10px;
+  background-color: rgb(70 43 118); 
+  transition-duration: .6s;}
+#screen {
+  background-color:#261642;
+  border-radius:0px 0px 10px 10px;
+  min-width:350px; 
+  width:50%; 
+  height: 100vh; 
+  color:white;}
+#input {
+  min-width:80%; 
+  width:50%; 
+  border:none;
+  border-radius:10px; 
+  margin:10px; 
+  padding:10px; outline: none;}
+#INFO, #HOME, .text{
+    font-size: 20px;
+    color: white;
+    background-color: #584381;
+    border-radius: 10px;
+    padding: 6px;
+    margin-top: 1px;
+    outline: none;}
+#INFO, #HOME, #demo span{
+  display: flex; 
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
 }
-table { 
-border-collapse: collapse;
-width:60%; 
-color:#A7A1AE; 
-font-size: 20px;
-}
-tbody:nth-child(odd) { 
-background-color:#323C50; 
-}
-tbody:nth-child(even) { 
-background-color: #2C3460; 
-} 
-td { 
-border:3px solid #1F2739; 
-padding:10px; 
-cursor:pointer; 
-}
-td:nth-child(1){
-color: #FB667A; width: 90%; text-align:left; 
-}td:nth-child(2){
-color: #7484c9;  width: 10%; text-align:center;
-}
+#INFO, #HOME, #demo{ 
+min-width:90%; 
+width:300px; 
+display: flex; 
+flex-direction: column-reverse; }
 </style>
-<br><br>
-<center> <table id="demo">
-<tbody><td> TodoList </td> <td> 👉 </td></tbody>
-<tbody><td> Order app </td> <td> 👉 </td></tbody>
-<tbody><td> Empty </td> <td> 👉 </td></tbody>
+
+<body>
+<center>
+<div id="butns">
+<button onclick="home()" onclick="result()" id="btn1">Home</button>
+<button onclick="chat()" id="btn2">Chat</button>
+<button onclick="info()" id="btn3">Info</button>
+</div>
+
+<div id="screen"> 
+<input id="input" onkeyup="chat()" placeholder="BIRSEYLER YAZ" autocomplete="off" />
+<table id="demo"> </table> </div>
+
 </center>
+<script>
+btn1.style = 'background-color:red;' 
+input.hidden = true; 
+
+onclick = () => {
+if (event.target.id.includes("btn")){
+btn1.style = null; btn2.style = null;  btn3.style = null; 
+event.target.style = 'background-color:red;' 
+}
+}
+
+onload = () => {home();}
+function home() {
+demo.innerHTML = null;
+input.hidden = true;
+demo.innerHTML = `<span class="text">A home page (or homepage) <br><br>is the main web page of a website </div>`;
+}
+
+function chat() {
+demo.innerHTML = null;
+input.hidden = false;
+if (event.keyCode == 13) {
+demo.innerHTML =  `<span class="text"> ${input.value}  <span> ✔️ 🗑️ </span></span><br>`;
+input.value = null;	}	}
+
+function info() {
+demo.innerHTML = null;
+input.hidden = true;
+demo.innerHTML = `<span class="text">Fatih Alemdar, Mobil 40599990 <br><br>
+Fatih Alemdar fra Tynset<br><br> Adresse: Olaf Røsts gate 6, 2500 Tynset </div>`;
+}
+
 </script>
 
 </body>
