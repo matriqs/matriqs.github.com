@@ -36,25 +36,31 @@ td{ width: 180px; height: 200px;text-align:center; cursor:pointer; font-size:100
   snapshot.forEach((childSnapshot) => { 
 
 if (childSnapshot.val().hal == "1"){ 
-demo.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th1">${childSnapshot.val().sira}</td>`; 
-if (demo.rows[demo.rows.length-1].cells[0].innerText == event.target.innerText) { speakText(); timeout = setTimeout(alertFunc, 3000);}
+demo.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th1">${childSnapshot.val().sira}</td>`;
+const sik = childSnapshot.val().sira;
+alertFunc(sik);
+
 }else{
 demo.innerHTML += `<td hidden id="${childSnapshot.val().keyz}" class="th2">${childSnapshot.val().sira}</td>`;
 demo1.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th2">${childSnapshot.val().sira}</td>`;
 }
 })
 
-function speakText() {
-  const text = `Kølapp nummer ${event.target.innerHTML} ... Kølapp nummer ${event.target.innerHTML}`;
-  const utterance = new SpeechSynthesisUtterance(text);
-  window.speechSynthesis.speak(utterance);
-}
+function alertFunc(sik) {
 
-function alertFunc() {
 const x = new Audio("https://www.myinstants.com/media/sounds/boxing-bell-sound-effect-with-download-link.mp3" );
 x.play(); x.volume = 1;
+
+speak(sik);
 }
 
+function speak(sik){
+setTimeout(() => {
+  const text = `Kølapp nummer ${sik}`;
+  const utterance = new SpeechSynthesisUtterance(text);
+  window.speechSynthesis.speak(utterance);
+}, 1500);
+}
 onclick = () =>{
 
 if (event.target.className == "th2"){
