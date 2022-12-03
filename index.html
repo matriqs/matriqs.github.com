@@ -1,4 +1,3 @@
-
 <html>
 <style>
 *{margin:0;}
@@ -13,7 +12,7 @@ td{ width: 180px; height: 200px;text-align:center; cursor:pointer; font-size:100
 </style>
 
 <body>
-<button onclick="ekle()" id="ekle" style="background-color: #04AA6D; width: 80%;">Yeni Siparis ekle</button><button id="gerial" onclick="gerial()" style="background-color: red; width: 20%;">Ayar</button>
+<button id="ekle" style="background-color: #04AA6D; width: 80%;">Yeni Siparis ekle</button><button id="gerial" onclick="gerial()" style="background-color: red; width: 20%;">Ayar</button>
 <table id="demo"></table>
 <table id="demo1"></table>
 <script type="module">
@@ -38,33 +37,37 @@ td{ width: 180px; height: 200px;text-align:center; cursor:pointer; font-size:100
 if (childSnapshot.val().hal == "1"){ 
 demo.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th1">${childSnapshot.val().sira}</td>`;
 const sik = childSnapshot.val().sira;
-alertFunc(sik);
+}
 
-}else{
+if (childSnapshot.val().zil == "2"){ 
+  update(ref(db, childSnapshot.val().keyz), {sira:childSnapshot.val().sira, hal:1, keyz:event.target.id, zil:0 });
+alertFunc();
+speak(childSnapshot.val().sira);
+}
+    
+if (childSnapshot.val().hal == "2"){
 demo.innerHTML += `<td hidden id="${childSnapshot.val().keyz}" class="th2">${childSnapshot.val().sira}</td>`;
 demo1.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th2">${childSnapshot.val().sira}</td>`;
 }
 })
 
-function alertFunc(sik) {
-
-const x = new Audio("https://www.myinstants.com/media/sounds/boxing-bell-sound-effect-with-download-link.mp3" );
-x.play(); x.volume = 1;
-
-speak(sik);
-}
-
 function speak(sik){
-setTimeout(() => {
   const text = `Kølapp nummer ${sik}`;
   const utterance = new SpeechSynthesisUtterance(text);
   window.speechSynthesis.speak(utterance);
+}
+    
+function alertFunc() {
+setTimeout(() => {
+const x = new Audio("https://www.myinstants.com/media/sounds/boxing-bell-sound-effect-with-download-link.mp3" );
+x.play(); x.volume = 1;
 }, 1500);
 }
+    
 onclick = () =>{
 
 if (event.target.className == "th2"){
-update(ref(db, event.target.id), {sira:event.target.innerHTML , hal:1, keyz:event.target.id});
+update(ref(db, event.target.id), {sira:event.target.innerHTML , hal:1, keyz:event.target.id, zil:2});
 }
 
 if (event.target.className == "th1"){
@@ -75,10 +78,10 @@ if (event.target.id == "ekle"){
 
 const kid = new Date().toISOString().slice("2", "22").replaceAll(":","").replaceAll(".","").replaceAll("-","").replaceAll("T","");
 
-if (snapshot.size == 0){ set(ref(db,kid), {sira:1, hal:2, keyz:kid}) 
+if (snapshot.size == 0){ set(ref(db,kid), {sira:1, hal:2, keyz:kid, zil:1}) 
 }else{
 const len = eval(Number(demo.rows[demo.rows.length-1].cells[0].innerText)+1);
-set(ref(db,kid), {sira:len, hal:2, keyz:kid}) 
+set(ref(db,kid), {sira:len, hal:2, keyz:kid, zil:1}) 
 	}
 }
 
