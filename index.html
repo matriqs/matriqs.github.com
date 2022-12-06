@@ -1,83 +1,96 @@
 <html lang="en">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-html, body {
- min-height:95%;
- max-height: 950px;
-  margin: 0;
-  padding: 0;
-  background-image: linear-gradient(to right, #2170a8 0, #58b0ef 100%);
-   }
-.card { 
- background-image: linear-gradient(to right, #136fb0 0, #42a9f2 100%); 
- box-shadow: #0f0f0f 1px 5px 15px 5px;
- min-height:95%;
- max-height: 950px;
- min-width: 35%;
- max-width: 350px;
- border-radius: 20px;
- margin:auto;
- margin-top: 10px;
- text-align: center;
+        html,
+        body {
+            min-height: 95%;
+            max-height: 950px;
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to right, #2170a8 0, #58b0ef 100%);
+        }
+.card {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: stretch;
+	align-content: stretch;
 }
-.hit {
-    font-size: larger;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: flex-end;
-}
-button {
-  background-image: linear-gradient(to right, #16649b 0, #17659d 100%); 
-  width: 130px;
-  padding:9px;
-  margin:4px;
-  font-size: 12px;
-  text-align: center;
-  cursor: pointer;
-  color: #fff;
-  background-color: #fb5d32;
-  border: none;
-  border-radius: 10px;
-}
-.adres, .name, .info{ padding: 10px; color: #06047a;}
-.name {font-size: x-large;}
-.img img{ border-radius:50%; margin: 10px;}
+        .card {
+            background-image: linear-gradient(to right, #136fb0 0, #42a9f2 100%);
+            box-shadow: #0f0f0f 1px 5px 15px 5px;
+            min-height: 95%;
+            max-height: 950px;
+            min-width: 35%;
+            max-width: 350px;
+            border-radius: 20px;
+            margin: auto;
+            margin-top: 10px;
+            text-align: center;
+        }
 
+        .hit {
+            font-size: larger;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            align-content: flex-start;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        button {
+            background-image: linear-gradient(to right, #16649b 0, #17659d 100%);
+            width: 130px;
+            padding: 9px;
+            margin: 4px;
+            font-size: 12px;
+            text-align: center;
+            cursor: pointer;
+            color: #fff;
+            background-color: #fb5d32;
+            border: none;
+            border-radius: 10px;
+        }
+.name { font-size: x-large; }
+.adres, .name, .info { padding: 10px; color: #06047a; }
+.img img { border-radius: 50%; margin: 10px; }
 </style>
 
-<div class="card">
+    <div class="card">
 
-<div class="img"> <img src="https://www.w3schools.com/w3images/team2.jpg" width="130" height="130"> </div>
-<div class="name"> Fatih Alemdar</div>
-<div class="info"> Web Yaziyor Güya </div>
-<div class="adres"> <i class="fa fa-map-marker" style="font-size:18px;color:rgb(74, 12, 12)"> </i>  Norway / Tynset</div>
+        <div class="img"> <img src="https://www.w3schools.com/w3images/team2.jpg" width="130" height="130"> </div>
+        <div class="name"> Fatih Alemdar</div>
+        <div class="info"> Web Yaziyor Güya </div>
+        <div class="adres"> <i class="fa fa-map-marker" style="font-size:18px;color:rgb(74, 12, 12)"> </i> Norway /
+            Tynset</div>
 
-<div class="hit"> 
-    <div><big>812</big><br><small>Takipci</small></div>
-    <div><big>278</big><br><small>Takip</small></div>
-    <div><big>25</big><br><small>Yorum</small></div> 
-</div>
-<br>
-<div class="hit"> 
-    <div> <i class="fa fa-facebook-official" style="font-size:38px;color:rgb(27, 36, 91)"></i></div>
-    <div> <i class="fa fa-instagram" style="font-size:38px;color:#a32c75"></i> </div>
-    <div> <i class="fa fa-share-alt-square" style="font-size:38px;color:rgb(36, 50, 121)"></i> </div> 
-</div>
-<hr>
-<div class="hit"> 
-    <button> SEND MESSAGE </button> <button> FOLLOW ME</button>
-</div>
-</div>
-
-</body>
-</html>
+        <div class="hit">
+            <div><big>812</big><br><small>Takipci</small></div>
+            <div><big>278</big><br><small>Takip</small></div>
+            <div><big>25</big><br><small>Yorum</small></div>
+        </div>
     
+        <div class="hit">
+            <div> <i class="fa fa-facebook-official" style="font-size:38px;color:rgb(27, 36, 91)"></i></div>
+            <div> <i class="fa fa-instagram" style="font-size:38px;color:#a32c75"></i> </div>
+            <div> <i class="fa fa-share-alt-square" style="font-size:38px;color:rgb(36, 50, 121)"></i> </div>
+        </div>
+
+        <div class="hit">
+            <button> SEND MESSAGE </button> <button> FOLLOW ME</button>
+        </div>
+        <br>
+    </div>
+
+    </body>
+
+</html>
