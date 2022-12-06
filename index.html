@@ -1,108 +1,103 @@
-<html>
-<style>
-*{margin:0;}
-tbody{  margin:5px;}
-button { border: none; color: white; padding: 14px 28px;
-font-size: 20px; cursor: pointer; text-align: center; }
-#demo, #demo1{  font-weight: -300; font-family: fantasy; 
-display: flex; flex-wrap: wrap; justify-content: center; }
-td{ width: 180px; height: 200px;text-align:center; cursor:pointer; font-size:100px; }
-.th1{color:white;background-image: url("https://cdn.edu.buncee.com/assets/f65d5bd3b2428f1f6ace7a0ce37fb30a/sticker-education-steam-0003-vector-smart-object.png");background-repeat: no-repeat, repeat;background-size: 180px 200px;}
-.th2{color:#0e0401;background-image: url("https://cdn.edu.buncee.com/assets/bbd34db8c2175fcf5920dcf2a3e2f989/sticker-education-postit-042120-5.png");background-repeat: no-repeat, repeat;background-size: 180px 200px;}
+<html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to right, #2170a8 0, #58b0ef 100%);  height: 100vh;
+  text-align: center;}
+.card { 
+ background-image: linear-gradient(to right, #136fb0 0, #42a9f2 100%);  height: 100vh; 
+ box-shadow: #0f0f0f 0px 10px 10px 0px;
+ width: 30%;
+ min-width: 55vh;
+ height: 90vh;
+ border: 1px solid #0f0f0f;
+ border-radius: 20px;
+}
+.image {
+    position: relative;
+    margin: 10px 0px 10px 0px;
+    width: 120px; 
+    height: 120px; 
+    border:1px solid;
+    border-radius: 60px;
+    
+    }
+.adres, .name, .info{ padding: 5px; }
+.name {font-size: x-large;}
+.hit {
+    font-size: larger;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.hit1 {
+    font-size: small;
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+}
+button {
+  background-image: linear-gradient(to right, #16649b 0, #17659d 100%); 
+  width: 130px;
+  padding:10px;
+  margin:4px;
+  font-size: 10px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  background-color: #fb5d32;
+  border: none;
+  border-radius: 10px;
+}
+img {
+  position: absolute;
+  clip-path: rect(20px,130px,130px,20px);
+  clip-path: circle(31%);
+  top:-45px;
+  left:-50px;
+}
 </style>
+<center><br>
+<div class="card">
 
-<body>
-<button id="ekle" style="background-color: #04AA6D; width: 80%;">Yeni Siparis ekle</button><button id="gerial" onclick="gerial()" style="background-color: red; width: 20%;">Ayar</button>
-<table id="demo"></table>
-<table id="demo1"></table>
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-  const firebaseConfig = { databaseURL: "https://myapp-150186-default-rtdb.europe-west1.firebasedatabase.app", };
-  const app = initializeApp(firebaseConfig);
-    
-  import { getDatabase, ref, onChildAdded, onChildChanged,
-            onChildRemoved, query, limitToFirst, limitToLast, 
-            set, remove, onValue, child, get, update } 
-  from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js"
-    
-  const db = getDatabase();
-  const commentsRef = ref(db);
+<div class="image"> <img src="https://www.w3schools.com/w3images/team2.jpg" width="180%" height="180%"> </div>
+<div class="name"> Fatih Alemdar</div>
+<div class="info"> Web Yaziyor Güya </div>
+<div class="adres"> <i class="fa fa-map-marker" style="font-size:18px;color:rgb(74, 12, 12)"> </i>  Norway / Tynset</div>
 
-  onValue(query(ref(db),), (snapshot) => {  
-  demo.innerHTML = null; 
-  demo1.innerHTML = null; 
-  
-  snapshot.forEach((childSnapshot) => { 
+<div class="hit"> 
+    <div>812</div><div>54</div><div>264</div> 
+</div>
+<div class="hit1"> 
+    <div>Takipci</div><div>Takip</div><div>Yorum</div> 
+</div>
+<br>
+<div class="hit"> 
+    <div> <i class="fa fa-facebook-official" style="font-size:38px;color:rgb(27, 36, 91)"></i></div>
+    <div> <i class="fa fa-instagram" style="font-size:38px;color:#a32c75"></i> </div>
+    <div> <i class="fa fa-share-alt-square" style="font-size:38px;color:rgb(36, 50, 121)"></i> </div> 
+</div>
 
-if (childSnapshot.val().hal == "1"){ 
-demo.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th1">${childSnapshot.val().sira}</td>`;
-const sik = childSnapshot.val().sira;
-}
+<div class="hit"> 
+    <button> SEND MESSAGE </button> <button> FOLLOW ME</button>
+</div>
+</div>
 
-if (childSnapshot.val().zil == "2"){ 
-  update(ref(db, childSnapshot.val().keyz), {sira:childSnapshot.val().sira, hal:1, keyz:event.target.id, zil:0 });
-alertFunc();
-speak(childSnapshot.val().sira);
-}
-    
-if (childSnapshot.val().hal == "2"){
-demo.innerHTML += `<td hidden id="${childSnapshot.val().keyz}" class="th2">${childSnapshot.val().sira}</td>`;
-demo1.innerHTML += `<td id="${childSnapshot.val().keyz}" class="th2">${childSnapshot.val().sira}</td>`;
-}
-})
-
-function speak(sik){
-  const text = `Kølapp nummer ${sik}`;
-  const utterance = new SpeechSynthesisUtterance(text);
-  window.speechSynthesis.speak(utterance);
-}
-    
-function alertFunc() {
-setTimeout(() => {
-const x = new Audio("https://www.myinstants.com/media/sounds/boxing-bell-sound-effect-with-download-link.mp3" );
-x.play(); x.volume = 1;
-}, 1500);
-}
-    
-onclick = () =>{
-
-if (event.target.className == "th2"){
-update(ref(db, event.target.id), {sira:event.target.innerHTML , hal:1, keyz:event.target.id, zil:2});
-}
-
-if (event.target.className == "th1"){
-remove(ref(db, event.target.id));
-}
-
-if (event.target.id == "ekle"){
-
-const kid = new Date().toISOString().slice("2", "22").replaceAll(":","").replaceAll(".","").replaceAll("-","").replaceAll("T","");
-
-if (snapshot.size == 0){ set(ref(db,kid), {sira:1, hal:2, keyz:kid, zil:1}) 
-}else{
-const len = eval(Number(demo.rows[demo.rows.length-1].cells[0].innerText)+1);
-set(ref(db,kid), {sira:len, hal:2, keyz:kid, zil:1}) 
-	}
-}
-
-if (event.target.id == "gerial"){
-const kid = new Date().toISOString().slice("2", "22").replaceAll(":","").replaceAll(".","").replaceAll("-","").replaceAll("T","");
-const mainMenu = [ "Bitenler icin 2","Mutfakda olan icin 1"];
-
-let coment = prompt("Hangi Numara geri alinacak?", "");
-let no = prompt(`Siparis durumu nedir? \n${mainMenu.join('\n')}`, "2");
-if (coment == "" || coment.length> 2 || no.length> 1 || !no.includes("1") && !no.includes("2")) {
-alert("YANLIS OLDU, BASTAN YAP!");
-} else {
-  set(ref(db,kid), {sira:coment, hal:Number(no), keyz:kid}) 
-	}
-}
-
-}   // IF BURDA BITIYOR..
-
-});   // KABSUL BURDA BITIYOR..
-
-</script>
-
+</center>
 </body>
 </html>
+    
