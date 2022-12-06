@@ -14,23 +14,15 @@ body {
 .card { 
  background-image: linear-gradient(to right, #136fb0 0, #42a9f2 100%);  height: 100vh; 
  box-shadow: #0f0f0f 0px 10px 10px 0px;
+ height:95%;
+ min-height:500px;
+ min-width: 280px;
  width: 30%;
- min-width: 55vh;
- height: 90vh;
  border: 1px solid #0f0f0f;
  border-radius: 20px;
+ margin:auto;
+ margin-top: 5px;
 }
-.image {
-    position: relative;
-    margin: 10px 0px 10px 0px;
-    width: 120px; 
-    height: 120px; 
-    border:1px solid;
-    border-radius: 60px;
-    
-    }
-.adres, .name, .info{ padding: 5px; }
-.name {font-size: x-large;}
 .hit {
     font-size: larger;
     padding: 10px;
@@ -41,21 +33,12 @@ body {
     flex-direction: row;
     align-items: flex-end;
 }
-.hit1 {
-    font-size: small;
-    display: flex;
-    justify-content: space-around;
-    align-content: flex-start;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    align-items: flex-end;
-}
 button {
   background-image: linear-gradient(to right, #16649b 0, #17659d 100%); 
   width: 130px;
-  padding:10px;
+  padding:9px;
   margin:4px;
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
   cursor: pointer;
   color: #fff;
@@ -63,18 +46,15 @@ button {
   border: none;
   border-radius: 10px;
 }
-img {
-  position: absolute;
-  clip-path: rect(20px,130px,130px,20px);
-  clip-path: circle(31%);
-  top:-45px;
-  left:-50px;
-}
+.adres, .name, .info{ padding: 10px; color: #06047a;}
+.name {font-size: x-large;}
+.img img{ border-radius:50%; margin: 10px;}
+
 </style>
-<center><br>
+
 <div class="card">
 
-<div class="image"> <img src="https://www.w3schools.com/w3images/team2.jpg" width="180%" height="180%"> </div>
+<div class="img"> <img src="https://www.w3schools.com/w3images/team2.jpg" width="130" height="130"> </div>
 <div class="name"> Fatih Alemdar</div>
 <div class="info"> Web Yaziyor Güya </div>
 <div class="adres"> <i class="fa fa-map-marker" style="font-size:18px;color:rgb(74, 12, 12)"> </i>  Norway / Tynset</div>
@@ -84,19 +64,18 @@ img {
     <div><big>278</big><br><small>Takip</small></div>
     <div><big>25</big><br><small>Yorum</small></div> 
 </div>
-
+<br>
 <div class="hit"> 
     <div> <i class="fa fa-facebook-official" style="font-size:38px;color:rgb(27, 36, 91)"></i></div>
     <div> <i class="fa fa-instagram" style="font-size:38px;color:#a32c75"></i> </div>
     <div> <i class="fa fa-share-alt-square" style="font-size:38px;color:rgb(36, 50, 121)"></i> </div> 
 </div>
-
+<hr>
 <div class="hit"> 
     <button> SEND MESSAGE </button> <button> FOLLOW ME</button>
 </div>
 </div>
 
-</center>
 </body>
 </html>
     
