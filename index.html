@@ -1,9 +1,9 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 <style>
 html, body {
  min-height: 95%;
@@ -15,17 +15,17 @@ html, body {
 display: flex;
 flex-direction: column;
 justify-content: space-between;
- background-image: linear-gradient(to right, #136fb0 0, #42a9f2 100%);
- box-shadow: #302a80 1px 5px 15px 5px;
+background-image: linear-gradient(to right, #136fb0 0, #42a9f2 100%);
+ box-shadow: #302a80 0px 0px 5px 3px;
  min-height: 96%;
  max-height: 950px;
- max-width: 380px;
+ max-width: 375px;
  border-radius: 20px;
  margin: auto;
  margin-top: 10px;
  text-align: center; 
 }
-.info, .hit {
+.hit {
  display: flex;
  justify-content: space-around;
  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
@@ -41,36 +41,40 @@ button {
  margin: 4px;
  border: none;
  border-radius: 10px;
- font-size: 12px;
+ font-size: 15px;
  text-align: center;
  cursor: pointer;
  opacity: 0.8; 
  box-shadow: #050443 3px 10px 15px 3px;
 }
-.img img { box-shadow: #050443 3px 10px 15px 3px; border-radius: 50%; margin: 10px; }
-.icon img { box-shadow: #050443 3px 10px 15px 3px; border-radius: 50%;
-            width: 50px; height: 50px;opacity: 0.7; margin-bottom:20px;}
+.icon img { 
+box-shadow: #050443 3px 10px 15px 3px;border-radius: 50%; width: 50px;
+height: 50px; opacity: 0.7; margin-bottom:20px; 
+}
+.image img{ width: 160px; height: 160px; border-radius: 50%;}
+.info { margin-top: -5%; margin-bottom: 20px; }
+.small {font-size: small; margin: -5%;}
+.small1 {font-size: small; }
 button:hover, .icon img:hover {opacity: 1; cursor: pointer; }
 hr {color:red; width: 95%; }
-
 </style>
 
 <div class="card">
-<div class="img"> <img src="https://www.w3schools.com/w3images/team2.jpg" width="130" height="130"> </div>
-<div class="info"><big> Fatih Alemdar </big></div><br>
-<div class="hit">
-<div><big>812</big><br><small>Takipci</small></div>
-<div><big>278</big><br><small>Takip</small></div>
-<div><big>25</big><br><small>Yorum</small></div>
-</div>
-<div class="hit"><button> SEND MESSAGE </button> <button> FOLLOW ME</button> </div>
-<hr>
-<div class="hit icon" >
+
+    <div class="hit" >
+    <div class="image"> <img src="https://www.w3schools.com/w3images/team2.jpg"> </div>
+    </div>
+    <div class="hit" > <div>Fatih Alemdar</div> </div>   
+    <div class="hit" > <div class="small"> 🗺️ Norway / Tynset</div> </div>
+    <div class="hit" > <div>812</div> <div>254</div> <div>265</div> </div>
+    <div class="hit info small1" > <div>Takipci</div> <div>Takip</div> <div>Yorum</div> </div>
+    <div class="hit" > <button>SEND MESSAGE</button> <button>FOLLOW ME</button></div> 
+    <hr><div class="hit icon" >
     <div> <img src="https://cdn-icons-png.flaticon.com/128/4494/4494479.png"></div>
     <div> <img src="https://cdn-icons-png.flaticon.com/128/4494/4494488.png"></div>
     <div> <img src="https://cdn-icons-png.flaticon.com/512/4494/4494485.png"></div>
     <div> <img src="https://cdn-icons-png.flaticon.com/128/9068/9068814.png"></div>
-</div>
+    </div>
 </div>
 </body>
 </html>
