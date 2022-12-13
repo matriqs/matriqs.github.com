@@ -1,0 +1,30 @@
+<html>
+<style>
+html, body {
+    background-image: linear-gradient(to left, #136fb0 0, #2693e1 100%);
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+    height: 99%;
+    width: 100%;
+    margin:0;  
+    text-align:center;
+    }
+</style>
+<body>
+
+<p id="demo"></p>
+<div id="maps"></div>
+<script>
+
+navigator.geolocation.getCurrentPosition(function(position) {
+show(position.coords.longitude, position.coords.latitude);
+});
+
+function show(a,b){
+demo.innerHTML = b+" "+a;
+
+maps.innerHTML = `<iframe width="450" height="350" src="https://maps.google.com/maps?hl=no&amp;ll=${b},${a}&amp;z=14&amp;output=embed"></iframe>`
+}
+</script>
+
+</body>
+</html>
