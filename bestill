@@ -1,0 +1,95 @@
+<html>
+<body>
+<style>
+body {text-align:center;}
+.btn-cover button {
+width:35px;
+height:23px;
+cursor:pointer;
+border-radius:4px;
+box-shadow: red 0px 1px 5px 0px ;
+background-color: rgb(221, 237, 45);
+border:none;
+}
+.cover{ 
+	width:400px;
+    margin:auto;
+    border:1px solid;
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+.btn-cover span {
+font-size:18px;
+padding:5px;
+}
+#db {width:400px; margin:auto; border:1px solid;}
+</style>
+
+<h2 class="btn-cover"><button onclick="olus()" style="width:400px;">Create Menu Item</button></h2>
+
+<div class="cover"> <h3 id="total">Total item : 0</h3> <h3 id="priser">Sub Total : 0 $</h3> </div>
+
+<div id="goster">
+
+<div class="cover">
+<img src="https://www.freepnglogos.com/uploads/food-png/junk-food-archives-classic-0.png" width="100px"> <h3>Cheese Burger <hr> Price 10 $</h3>
+<h3 class="btn-cover">
+<button id="0" name="10" onclick="result()">+</button> <span>0</span>
+<button id="0" name="10" onclick="this.previousElementSibling.innerHTML > 0 ? result() : '' ">-</button> 
+</h3>
+</div>
+
+<div class="cover">
+<img src="https://www.freepnglogos.com/uploads/food-png/junk-food-archives-classic-0.png" width="100px"> <h3>Cheese Burger <hr> Price 20 $</h3>
+<h3 class="btn-cover">
+<button id="1" name="20" onclick="result()">+</button> <span>0</span>
+<button id="1" name="20" onclick="this.previousElementSibling.innerHTML > 0 ? result() : '' ">-</button> 
+</h3>
+</div>
+
+</div>
+
+<br><div id="db">DATABASE</div>
+</div>
+
+<script>
+
+const liste =[{"id":"0","adet":"0","price":"10"},{"id":"1","adet":"0","price":"20"}]
+
+function result() {
+
+if (event.target.innerHTML == "+"){
+    kat = event.target.nextElementSibling.innerHTML++;
+    liste[event.target.id] = {id: event.target.id, adet: kat+1, price:event.target.name};
+
+}else{
+    kat = event.target.previousElementSibling.innerHTML--;
+    liste[event.target.id] = {id: event.target.id, adet: kat-1, price:event.target.name};
+}
+
+let totalt = 0; let price = 0;
+
+liste.forEach(element => { 
+    totalt += Number(element.adet); 
+    price += Number(element.adet) * Number(element.price);
+});
+total.innerHTML = `Total Item : ${totalt}`;
+priser.innerHTML = `Sub ${price} $`;
+
+
+db.innerHTML = JSON.stringify(liste);
+}
+
+function olus() {
+const sorgu = prompt("What will the price be?")
+
+goster.innerHTML +=`<div class="cover"><img src="https://www.freepnglogos.com/uploads/food-png/junk-food-archives-classic-0.png" width="100px"> <h3>Cheese Burger <hr> Price ${sorgu}  $</h3><h3 class="btn-cover"><button id="${liste.length}" name="${sorgu}" onclick="result()">+</button> <span>0</span><button id="0" name="10" onclick="this.previousElementSibling.innerHTML > 0 ? result() : '' ">-</button></h3></div><HR>`;
+liste[liste.length] = {id:liste.length, adet:0, price:sorgu};
+
+}
+
+</script>
+
+</body>
+</html>
