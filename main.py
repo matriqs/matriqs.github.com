@@ -1,19 +1,16 @@
-def harf_sayisi(kelime, harf):
-  # Kelime içinde harfin geçtiği sayıyı tutan sayaç
-  sayac = 0
+<pre><code>
+def faktoriyel(n):
+  # 1! = 1
+  if n == 1:
+    return 1
+  # n! = n * (n-1)!
+  else:
+    return n * faktoriyel(n-1)
 
-  # Kelimeyi harf harfinden arama
-  for h in kelime:
-    if h == harf:
-      sayac += 1
+# Kullanıcıdan bir sayı alın
+sayi = int(input("Lütfen bir sayı girin: "))
 
-  # Sayacı döndür
-  return sayac
-
-# Kullanıcıdan kelime ve harf alın
-kelime = input("Lütfen bir kelime girin: ")
-harf = input("Lütfen aranacak harfi girin: ")
-
-# Kelimedeki harf sayısını hesaplayın ve ekrana yazdırın
-sonuc = harf_sayisi(kelime, harf)
-print(f"'{kelime}' kelimesinde '{harf}' harfi {sonuc} kez geçiyor.")
+# Sayının faktöriyelini hesaplayın ve ekrana yazdırın
+sonuc = faktoriyel(sayi)
+print(f"{sayi}! = {sonuc}")
+</code></pre>
