@@ -1,20 +1,4 @@
-<html>
-<style>
-#result{
-    display: flex;
-    align-items: stretch;
-    justify-content: space-evenly;
-    align-content: stretch;
-    flex-wrap: nowrap;
-    flex-direction: row;
-   color:blue;
-    }
-</style>
-<body>
 
-<p id="result"></p>
-
-<script>
 let url = "https://www.ensonhaber.com"
 const file = 'https://corsproxy.io/?'+encodeURIComponent(url);
 fetch(file)
@@ -28,8 +12,3 @@ fetch(file)
       result.innerHTML += div.outerHTML;
     }
   }) .catch((error) => result.innerHTML = error);
-
-</script>
-
-</body>
-</html>
