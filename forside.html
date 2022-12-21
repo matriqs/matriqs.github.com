@@ -4,21 +4,34 @@
 <meta charset="utf-8">
 <title>Example of Text Block Over Image</title>
 <style>
-*{margin: auto;}
-    img { 
-   width: 330px;
+*{ margin: auto; }
+#screen { 
+   min-width: 20em;
+   max-width: 20em;
+   margin: auto;
 }
     .box{
         position: relative;
-        width: 330px;
-        margin: auto;
+        min-width: 20em;
+        max-width: 20em;
+        }
+        .box .ustlogo {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+    }
+    #logo{
+        height: 230px;
+        width: 230px;
     }
     .box .ustisim {
         position: absolute;
         z-index: 999;       
         text-align: center;
-        top: 38.9%; 
-        font-family: Arial,sans-serif;
+        top: 41%; 
         width: 100%; 
     }
     #isim{
@@ -30,8 +43,7 @@
         position: absolute;
         z-index: 999;       
         text-align: center;
-        top: 51.7%; 
-        font-family: Arial,sans-serif;
+        top: 53.7%; 
         width: 100%; 
     }
     #pass{
@@ -43,19 +55,19 @@
         position: absolute;
         z-index: 999;       
         text-align: center;
-        top: 61.1%; 
-        left: -43.4%;
+        top: 63.2%; 
+        left: -43.5%;
         width: 100%; 
     }
     #checked{
-        height: 18px;
-        border-radius: 17px;
+        height: 15px;
+        width: 14px;
     }
     .box .ustfblink {
         position: absolute;
         z-index: 999;       
         text-align: center;
-        top: 61%; 
+        top: 62.8%; 
         left: 25%;
         width: 100%; 
     }
@@ -70,7 +82,7 @@
         position: absolute;
         z-index: 999;       
         text-align: center;
-        top: 67%; 
+        top: 69%; 
         left: -0.2%;
         width: 100%; 
     }
@@ -81,19 +93,68 @@
         background-color: rgb(77, 105, 245);
         border: none;
     }
+    .box .ustfb {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 84.3%; 
+        left: -31.5%;
+        width: 100%; 
+    }
+    #fb{
+        height: 33px;
+        width: 93px;
+        border-radius: 7px;
+        background-color: rgba(35, 68, 235, 0.142);
+        border: none;
+    }
+    .box .usttw {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 84.3%; 
+        left: 0%;
+        width: 100%; 
+    }
+    #tw{
+        height: 33px;
+        width: 93px;
+        border-radius: 7px;
+        background-color: rgba(6, 249, 229, 0.142);
+        border: none;
+    } 
+       .box .ustgit {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 84.3%; 
+        left: 31.7%;
+        width: 100%; 
+    }
+    #git{
+        height: 33px;
+        width: 93px;
+        border-radius: 7px;
+        background-color: rgba(26, 27, 27, 0.142);
+        border: none;
+    }
 .fblink:hover {background-color: rgba(56, 65, 194, 0.443);}
  #btn:hover {background-color: rgb(61, 72, 225);}
 </style>
 </head> 
 <body>
     <div class="box">
-<img src="https://i.hizliresim.com/dkh88iq.png">
-<div class="ustisim"> <input type="text" id="isim"> </div>
-<div class="ustpass"> <input type="text" id="pass"> </div>
-<div class="ustchecked"> <input onclick="alert('Remember me');" type="checkbox" id="checked"> </div>
-<div class="ustfblink"> <div onclick="alert('Forget your password?');" class="fblink"></div> </div>
-<div class="ustbutton"> <input onclick="alert('Sing in');" type="button" id="btn" value="Sing in"> </div>
-
+        <img id="screen" src="https://i.hizliresim.com/bbzbvbx.jpg">
+        <div class="ustlogo"> <img id="logo" src="https://i.hizliresim.com/kp9mpp0.png"> </div>
+        <div class="ustisim"> <input type="text" id="isim"> </div>
+        <div class="ustpass"> <input type="text" id="pass"> </div>
+        <div class="ustchecked"> <input onclick="alert('Remember me');" type="checkbox" id="checked"> </div>
+        <div class="ustfblink"> <div onclick="alert('Forget your password?');" class="fblink"></div> </div>
+        <div class="ustbutton"> <input onclick="alert('Sing in');" type="button" id="btn" value="Sing in"> </div>
+        <div class="ustfb"> <input onclick="alert('facebook.com');" type="button" id="fb"> </div>
+        <div class="usttw"> <input onclick="alert('twitter.com');" type="button" id="tw"> </div>
+        <div class="ustgit"> <input onclick="alert('github.com');" type="button" id="git"> </div>
+        
     </div>
 </body>
 </html>
