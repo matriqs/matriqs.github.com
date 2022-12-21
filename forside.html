@@ -38,6 +38,7 @@
         height: 30px;
         width: 300px;
         border-radius: 7px;
+        text-align: center;
 }
 .box .ustpass {
         position: absolute;
@@ -50,6 +51,7 @@
         height: 30px;
         width: 300px;
         border-radius: 7px;
+        text-align: center;
 }
 .box .ustchecked {
         position: absolute;
@@ -143,18 +145,29 @@
 </style>
 </head> 
 <body>
-    <div class="box">
+    <div class="box" id="boxx">
         <img id="screen" src="https://i.hizliresim.com/bbzbvbx.jpg">
         <div class="ustlogo"> <img id="logo" src="https://i.hizliresim.com/kp9mpp0.png"> </div>
-        <div class="ustisim"> <input type="text" id="isim"> </div>
-        <div class="ustpass"> <input type="text" id="pass"> </div>
+        <div class="ustisim"> <input placeholder="admin" type="text" id="isim"> </div>
+        <div class="ustpass"> <input placeholder="123" type="text" id="pass"> </div>
         <div class="ustchecked"> <input onclick="alert('Remember me');" type="checkbox" id="checked"> </div>
         <div class="ustfblink"> <div onclick="alert('Forget your password?');" class="fblink"></div> </div>
-        <div class="ustbutton"> <input onclick="alert('Sing in');" type="button" id="btn" value="Sing in"> </div>
+        <div class="ustbutton"> <input onclick="login()" type="button" id="btn" value="Sing in"> </div>
         <div class="ustfb"> <input onclick="alert('facebook.com');" type="button" id="fb"> </div>
         <div class="usttw"> <input onclick="alert('twitter.com');" type="button" id="tw"> </div>
         <div class="ustgit"> <input onclick="alert('github.com');" type="button" id="git"> </div>
         
     </div>
+<script>
+function login() {
+    if (pass.value == "123" && isim.value =="admin") {
+        boxx.innerHTML = '<img height="100%" src="https://t3.ftcdn.net/jpg/02/20/14/38/360_F_220143804_fc4xRygvJ8bn8JPQumtHJieDN4ORNyjs.jpg">';
+
+    } else {
+        alert("Error");
+    }
+
+}
+</script>
 </body>
 </html>
