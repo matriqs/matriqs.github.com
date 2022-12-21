@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Example of Text Block Over Image</title>
+<style>
+*{margin: auto;}
+    img { 
+   width: 330px;
+}
+    .box{
+        position: relative;
+        width: 330px;
+        margin: auto;
+    }
+    .box .ustisim {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 38.9%; 
+        font-family: Arial,sans-serif;
+        width: 100%; 
+    }
+    #isim{
+        height: 30px;
+        width: 300px;
+        border-radius: 7px;
+}
+.box .ustpass {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 51.7%; 
+        font-family: Arial,sans-serif;
+        width: 100%; 
+    }
+    #pass{
+        height: 30px;
+        width: 300px;
+        border-radius: 7px;
+}
+.box .ustchecked {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 61.1%; 
+        left: -43.4%;
+        width: 100%; 
+    }
+    #checked{
+        height: 18px;
+        border-radius: 17px;
+    }
+    .box .ustfblink {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 61%; 
+        left: 25%;
+        width: 100%; 
+    }
+    .fblink{
+        height: 20px;
+        width: 150px;
+        border-radius: 7px;
+        background-color: rgba(104, 126, 214, 0.221);
+        border: none;
+    }
+    .box .ustbutton {
+        position: absolute;
+        z-index: 999;       
+        text-align: center;
+        top: 67%; 
+        left: -0.2%;
+        width: 100%; 
+    }
+    #btn{
+        height: 37px;
+        width: 303px;
+        border-radius: 7px;
+        background-color: rgb(77, 105, 245);
+        border: none;
+    }
+.fblink:hover {background-color: rgba(56, 65, 194, 0.443);}
+ #btn:hover {background-color: rgb(61, 72, 225);}
+</style>
+</head> 
+<body>
+    <div class="box">
+<img src="https://i.hizliresim.com/dkh88iq.png">
+<div class="ustisim"> <input type="text" id="isim"> </div>
+<div class="ustpass"> <input type="text" id="pass"> </div>
+<div class="ustchecked"> <input onclick="alert('Remember me');" type="checkbox" id="checked"> </div>
+<div class="ustfblink"> <div onclick="alert('Forget your password?');" class="fblink"></div> </div>
+<div class="ustbutton"> <input onclick="alert('Sing in');" type="button" id="btn" value="Sing in"> </div>
+
+    </div>
+</body>
+</html>
