@@ -6,9 +6,9 @@
 <style>
 *{ margin: auto; }
 #screen { 
-   min-width: 20em;
-   max-width: 20em;
-   margin: auto;
+        min-width: 20em;
+        max-width: 20em;
+        margin: auto;
 }
     .box{
         position: relative;
@@ -67,42 +67,35 @@
         width: 295px;
         border-radius: 7px;
         text-align: center;
+        color:#ffffff;
+        font-size:large;
         background-color: rgb(123, 123, 239);
         border:none;
 }
-#fb {
+.footer {
         position: absolute;
         top: 84%; 
-        left: 3.8%;
         height: 36px;
         width: 95px;
         border-radius: 7px;
+        border:none;
+}
+.fcb {       
+        left: 3.7%;
         background-color: rgba(102, 102, 243, 0.199);
-        border:none;
 }
-#tw {
-        position: absolute;
-        top: 84%; 
-        left: 35.4%;
-        height: 36px;
-        width: 95px;
-        border-radius: 7px;
-        background-color: rgba(102, 235, 244, 0.199);
-        border:none;
+.twi {
+        left: 35.3%;
+        background-color: rgba(102, 243, 208, 0.199);
 }
-#git {
-        position: absolute;
-        top: 84%; 
-        left: 67%;
-        height: 36px;
-        width: 95px;
-        border-radius: 7px;
-        background-color: rgba(84, 105, 107, 0.199);
-        border:none;
+.git {
+        left: 66.8%;
+        background-color: rgba(77, 77, 92, 0.199);
 }
 </style>
 </head> 
 <body>
+
     <div class="box" id="boxx">
         <img id="screen" src="https://i.hizliresim.com/bbzbvbx.jpg">
         <img id="logo" src="https://i.hizliresim.com/kp9mpp0.png">
@@ -111,9 +104,9 @@
         <input onclick="alert('Remember me');" type="checkbox" id="checked">
         <span onclick="alert('Forget your password?');" id="forgot"> </span>
         <input onclick="alert('Giris Yok!');" type="button" id="btn" value="Sing in">
-        <input onclick="alert('facebook.com');" type="button" id="fb">
-        <input onclick="alert('twitter.com');" type="button" id="tw">
-        <input onclick="alert('GITHUB.com');" type="button" id="git">
+        <input onclick="alert('facebook.com');" type="button" class="footer fcb">
+        <input onclick="alert('twitter.com');" type="button" class="footer twi">
+        <input onclick="alert('GITHUB.com');" type="button" class="footer git">
     </div>
 
 </body>
