@@ -14,160 +14,119 @@
         position: relative;
         min-width: 20em;
         max-width: 20em;
-        }
-        .box .ustlogo {
+}
+#logo {
         position: absolute;
-        z-index: 999;       
-        text-align: center;
-        top: 0; 
-        left: 0;
-        width: 100%; 
-    }
-    #logo{
+        top: 0px; 
+        left: 15%;
         height: 230px;
         width: 230px;
-    }
-    .box .ustisim {
+}
+#isim {
         position: absolute;
-        z-index: 999;       
-        text-align: center;
         top: 41%; 
-        width: 100%; 
-    }
-    #isim{
+        left: 4%;
         height: 30px;
-        width: 300px;
+        width: 287px;
         border-radius: 7px;
         text-align: center;
 }
-.box .ustpass {
+#pass {
         position: absolute;
-        z-index: 999;       
-        text-align: center;
-        top: 53.7%; 
-        width: 100%; 
-    }
-    #pass{
+        top: 53.5%; 
+        left: 4%;
         height: 30px;
-        width: 300px;
+        width: 287px;
         border-radius: 7px;
         text-align: center;
 }
-.box .ustchecked {
+#checked {
         position: absolute;
-        z-index: 999;       
-        text-align: center;
-        top: 63.2%; 
-        left: -43.5%;
-        width: 100%; 
-    }
-    #checked{
+        top: 63.1%; 
+        left: 4%;
         height: 15px;
-        width: 14px;
-    }
-    .box .ustfblink {
-        position: absolute;
-        z-index: 999;       
+        width: 15px;
+        border-radius: 7px;
         text-align: center;
-        top: 62.8%; 
-        left: 25%;
-        width: 100%; 
-    }
-    .fblink{
+}
+#forgot {
+        position: absolute;
+        top: 62.7%; 
+        left: 53%;
         height: 20px;
-        width: 150px;
+        width: 140px;
         border-radius: 7px;
-        background-color: rgba(104, 126, 214, 0.221);
-        border: none;
-    }
-    .box .ustbutton {
-        position: absolute;
-        z-index: 999;       
         text-align: center;
+        background-color: rgba(145, 145, 247, 0.324);
+}
+#btn {
+        position: absolute;
         top: 69%; 
-        left: -0.2%;
-        width: 100%; 
-    }
-    #btn{
-        height: 37px;
-        width: 303px;
+        left: 3.8%;
+        height: 36px;
+        width: 295px;
         border-radius: 7px;
-        background-color: rgb(77, 105, 245);
-        border: none;
-    }
-    .box .ustfb {
-        position: absolute;
-        z-index: 999;       
         text-align: center;
-        top: 84.3%; 
-        left: -31.5%;
-        width: 100%; 
-    }
-    #fb{
-        height: 33px;
-        width: 93px;
-        border-radius: 7px;
-        background-color: rgba(35, 68, 235, 0.142);
-        border: none;
-    }
-    .box .usttw {
+        background-color: rgb(123, 123, 239);
+        border:none;
+}
+#fb {
         position: absolute;
-        z-index: 999;       
-        text-align: center;
-        top: 84.3%; 
-        left: 0%;
-        width: 100%; 
-    }
-    #tw{
-        height: 33px;
-        width: 93px;
+        top: 84%; 
+        left: 3.8%;
+        height: 36px;
+        width: 95px;
         border-radius: 7px;
-        background-color: rgba(6, 249, 229, 0.142);
-        border: none;
-    } 
-       .box .ustgit {
+        background-color: rgba(102, 102, 243, 0.199);
+        border:none;
+}
+#tw {
         position: absolute;
-        z-index: 999;       
-        text-align: center;
-        top: 84.3%; 
-        left: 31.7%;
-        width: 100%; 
-    }
-    #git{
-        height: 33px;
-        width: 93px;
+        top: 84%; 
+        left: 35.4%;
+        height: 36px;
+        width: 95px;
         border-radius: 7px;
-        background-color: rgba(26, 27, 27, 0.142);
-        border: none;
-    }
-.fblink:hover {background-color: rgba(56, 65, 194, 0.443);}
- #btn:hover {background-color: rgb(61, 72, 225);}
+        background-color: rgba(102, 235, 244, 0.199);
+        border:none;
+}
+#tw {
+        position: absolute;
+        top: 84%; 
+        left: 35.4%;
+        height: 36px;
+        width: 95px;
+        border-radius: 7px;
+        background-color: rgba(102, 235, 244, 0.199);
+        border:none;
+}
+#git {
+        position: absolute;
+        top: 84%; 
+        left: 67%;
+        height: 36px;
+        width: 95px;
+        border-radius: 7px;
+        background-color: rgba(84, 105, 107, 0.199);
+        border:none;
+}
 </style>
 </head> 
 <body>
     <div class="box" id="boxx">
         <img id="screen" src="https://i.hizliresim.com/bbzbvbx.jpg">
-        <div class="ustlogo"> <img id="logo" src="https://i.hizliresim.com/kp9mpp0.png"> </div>
-        <div class="ustisim"> <input placeholder="admin" type="text" id="isim"> </div>
-        <div class="ustpass"> <input placeholder="123" type="text" id="pass"> </div>
-        <div class="ustchecked"> <input onclick="alert('Remember me');" type="checkbox" id="checked"> </div>
-        <div class="ustfblink"> <div onclick="alert('Forget your password?');" class="fblink"></div> </div>
-        <div class="ustbutton"> <input onclick="login()" type="button" id="btn" value="Sing in"> </div>
-        <div class="ustfb"> <input onclick="alert('facebook.com');" type="button" id="fb"> </div>
-        <div class="usttw"> <input onclick="alert('twitter.com');" type="button" id="tw"> </div>
-        <div class="ustgit"> <input onclick="alert('github.com');" type="button" id="git"> </div>
-        
+        <img id="logo" src="https://i.hizliresim.com/kp9mpp0.png">
+        <input placeholder="Admin" type="text" id="isim">
+        <input placeholder="Password? 123" type="text" id="pass">
+        <input onclick="alert('Remember me');" type="checkbox" id="checked">
+        <span onclick="alert('Forget your password?');" id="forgot"> </span>
+        <input onclick="alert('Giris Yok!');" type="button" id="btn" value="Sing in">
+        <input onclick="alert('facebook.com');" type="button" id="fb">
+        <input onclick="alert('twitter.com');" type="button" id="tw">
+        <input onclick="alert('GITHUB.com');" type="button" id="git">
+   
+   
     </div>
-<script>
-function login() {
-    if (pass.value == "123" && isim.value =="admin") {
-        boxx.innerHTML = '<img height="100%" src="https://t3.ftcdn.net/jpg/02/20/14/38/360_F_220143804_fc4xRygvJ8bn8JPQumtHJieDN4ORNyjs.jpg">';
 
-    } else {
-        alert("Error");
-    }
-
-}
-</script>
 </body>
 </html>
