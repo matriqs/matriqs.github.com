@@ -96,11 +96,68 @@
         background-color: rgba(77, 77, 92, 0.199);
         box-shadow:0px 1px 3px 0px #14161c;
 }
-@media screen and (max-width: 480px) {
-  body {
+.dark{
+    content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+#BODY{
+        position: relative;
+        min-width: 20em;
+        max-width: 20em;
+        height: 10em;
+        visibility: hidden;
+        border:1px solid;
 
-  }
+        display: flex;
+        justify-content: center;
+
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+
+        background-color: #ffffff;
+        border-radius: 7px;
 }
+.cancel {
+        position: absolute;
+        top: 65%; 
+        left: 4%;
+        height: 33px;
+        width: 44.4%;
+        border:none;
+        background-color: rgba(193, 193, 195, 0.479);
+        border-radius: 7px;
+}
+.okey {
+        position: absolute;
+        top: 65%; 
+        left: 51%;
+        height: 33px;
+        width: 44.4%;
+        color:white;
+        border:none;
+        background-color: rgb(87, 87, 241);
+        border-radius: 7px;
+}
+.tittel {
+        position: absolute;
+        top: 10%; 
+        font-size: x-large;
+}
+.text {
+        position: absolute;
+        top: 35%; 
+        color: rgb(52, 52, 119);
+        font-size: medium;
+}  
 </style>
 </head> 
 <body>
@@ -112,11 +169,18 @@
         <input placeholder="Password? 123" type="text" id="pass">
         <input onclick="alert('Remember me');" type="checkbox" id="checked">
         <span onclick="alert('Forget your password?');" id="forgot"> </span>
-        <input onclick="alert('Giris Yok!');" type="button" id="btn" value="Sing in">
+        <input onclick="BODY.style='visibility:visible;'; document.querySelector('body').classList.add('dark'); document.querySelector('body > .box').hidden = true; " type="button" id="btn" value="Sing in">
         <input onclick="alert('facebook.com');" type="button" class="footer fcb">
         <input onclick="alert('twitter.com');" type="button" class="footer twi">
         <input onclick="alert('GITHUB.com');" type="button" class="footer git">
     </div>
+
+  <div id="BODY">
+        <div class="tittel">Welcommen!</div>
+        <div class="text">✅ You are active!</div>
+        <button onclick="alert('Canceled'); BODY.style='visibility:hidden;'; document.querySelector('body').classList.remove('dark'); document.querySelector('body > .box').hidden = false;" class="cancel">Cancel</button>
+        <button onclick="alert('Aceptet'); BODY.style='visibility:hidden;'; document.querySelector('body').classList.remove('dark'); document.querySelector('body').classList.remove('dark'); document.querySelector('body > .box').hidden = false;" class="okey">Axept</button>
+</div>
 
 </body>
 </html>
